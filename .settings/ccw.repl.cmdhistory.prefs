@@ -1,2 +1,2 @@
-cmdhistory=["lein run" "(-main )" "(-main)"]
+cmdhistory=["lein run" "(-main )" "(-main)" "(read-file)" "(read-file \\"wurst\\")" "(-main)"]
 eclipse.preferences.version=1
