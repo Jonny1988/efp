@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>EFP File Validator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="javascript.js"></script>
+</head>
+<body>
+<header class="col-xs-12">
+    <h1>File Validator</h1>
+</header>
+<section class="col-xs-12 col-md-4 col-md-offset-2">
+    <form >
+        <label for="dataOne">Datei 1
+            <input id="dataOne" type="file" ></input>
+        </label>
+        <label for="dataTwo">Datei 2
+            <input id="dataTwo" type="file" ></input>
+        </label>
+        <br>
+        <button type="button" onclick="callbackHandler()">Validieren</button>
+    </form>
+</section>
+<aside class="col-xs-12 col-md-4">
+    Ergebnis:
+    <div id="results"></div>
+</aside>
+<footer class="col-xs-12">
+    &copy Matthias Michael Hauf, Jonathan Brenner
+</footer>
+</body>
+</html>

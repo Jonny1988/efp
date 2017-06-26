@@ -5,8 +5,9 @@
 (refer 'efp-project.fileread)
 
 (defroutes myapp
-  (GET "/" [] (read-file "hansel")))
+  (GET "/" [] (read-file "hansel"))
+  (POST "/" [] "HELLO POST"))
 
 (defn -main []
   (run-server myapp {:port 5000})
-  (read-file "hansel")) asdasda
+  (read-file "hansel")) 
