@@ -2,7 +2,6 @@
 
 (require 'efp-project.javaAnalyse)
 (refer 'efp-project.javaAnalyse)
-(use 'clojure.string)
 
 (defn buildAddNotifcation [type]
   (fn [result name comment]
@@ -19,7 +18,7 @@
 (defn index-of-end
   "like index-of but gives the position of the last character that was searched"
   [string search pos]
-  (if-let [pos (index-of string search pos)]
+  (if-let [pos (clojure.string/index-of string search pos)]
     (+ (count search) pos)
   )
  )
@@ -31,7 +30,7 @@
    (fn [result context]
     (if-let [queueEndPos (index-of-end context search 0)]
      (conj result 
-       {:inner (trim (subs context queueEndPos (index-of context ")" queueEndPos)))
+       {:inner (clojure.string/trim (subs context queueEndPos (clojure.string/index-of context ")" queueEndPos)))
         :context context})
      ;inner defines the paramater or parameters the function uses
      ;context is simple there to refer where it was found
@@ -49,7 +48,7 @@
   (if (= (get value 0) "\"")
     value
     (let [nonFunction (analyse :nonFunction) indexTo (index-of-end nonFunction (str value " = ") 0)]
-       (subs nonFunction indexTo (index-of nonFunction ";" indexTo))
+       (subs nonFunction indexTo (clojure.string/index-of nonFunction ";" indexTo))
     )
 	 )
 )

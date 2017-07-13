@@ -3,6 +3,7 @@
 (def comment-regex #"((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:\/\/.*))")
 (def import-regex #"(?<=import )(?:(?!;).)*")
 (def function-regex #"(public|private) (\w+ )*(\w+)\(.*\).*\{")
+;(def example-java (str (slurp "C:\\Users\\Kroemel\\Documents\\GitHub\\efp\\temp\\FileServer.java")))
 
 (defn remove-comments
   "removes evey line of comments since thoose can really mess with the analyse"
