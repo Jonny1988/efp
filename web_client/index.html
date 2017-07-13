@@ -8,27 +8,31 @@
     <script src="javascript.js"></script>
 </head>
 <body>
-<header class="col-xs-12">
-    <h1>File Validator</h1>
-</header>
-<section class="col-xs-12 col-md-4 col-md-offset-2">
-    <form >
-        <label for="dataOne">Datei 1
-            <input id="dataOne" type="file" ></input>
-        </label>
-        <label for="dataTwo">Datei 2
-            <input id="dataTwo" type="file" ></input>
-        </label>
-        <br>
-        <button type="button" onclick="callbackHandler()">Validieren</button>
-    </form>
-</section>
-<aside class="col-xs-12 col-md-4">
-    Ergebnis:
-    <div id="results"></div>
-</aside>
-<footer class="col-xs-12">
-    &copy Matthias Michael Hauf, Jonathan Brenner
-</footer>
+<div class="container well" style="margin-top:1%;">
+	<header class="row">
+		<h1>VAR File Validator</h1>
+	</header>
+	<div class="row">
+		<h2>Upload Aufgabe 1</h2>
+		<div class="col-xs-4">
+			<input id="data_one" type="file"></input>
+		</div>
+		<div class="col-xs-7 well validation_section">
+			Ergebnis: <div id="result_one"></div>
+		</div>
+	</div>
+	<div class="row">
+		<h2>Upload Aufgabe 2</h2>
+		<div class="col-xs-4">
+			<input id="data_two" type="file"></input>
+		</div>
+		<div class="col-xs-7 well validation_section">
+			Ergebnis:<div id="result_two"></div>
+		</div>	
+	</div>
+	<footer class="row">
+		&copy Matthias Michael Hauf, Jonathan Brenner
+	</footer>
+</div>
 </body>
 </html>

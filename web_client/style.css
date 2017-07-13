@@ -2,11 +2,9 @@ header , footer{
     text-align: center;
 }
 
-aside,section {
-    border: 1px solid;
+.validation_section{
     height: 20em;
     margin: 1%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    word-break: break-all;
+	overflow-y: scroll;
+    word-break: break;
 }
