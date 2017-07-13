@@ -4,19 +4,7 @@
 (refer 'efp-project.javaAnalyse)
 (use 'clojure.string)
 
-;; Klassenname FileServer -> ClassNameError
-;; package var.mom.jms.file -> packageNameError
-;; jndi.properties queue.var.mom.jms.file.requestqueue -> PropertiesError
-;; JMS TextMessage -> TextMessageError
-
-;; case aufgabe 2
-;; Klassenname ChatClient
-;; package var.rmi.chat
-;; Conf.CHATSERVICE
-;; Benutzername args[0]
-;Replacing Template Method
 (defn buildAddNotifcation [type]
-  "shshsh"
   (fn [result name comment]
     (into result
       [{:type type
@@ -29,6 +17,7 @@
 (def addError (buildAddNotifcation "Error"))
 
 (defn index-of-end
+  "like index-of but gives the position of the last character that was searched"
   [string search pos]
   (if-let [pos (index-of string search pos)]
     (+ (count search) pos)
@@ -36,6 +25,7 @@
  )
 
 (defn getFunctionInner
+  "looks up for a specific search that should end with bracket inside an array of contexe, returns the the first hit result of every context if there is one"
   [contexte search]
   (reduce 
    (fn [result context]
@@ -43,6 +33,8 @@
      (conj result 
        {:inner (trim (subs context queueEndPos (index-of context ")" queueEndPos)))
         :context context})
+     ;inner defines the paramater or parameters the function uses
+     ;context is simple there to refer where it was found
      result
      )
     )
