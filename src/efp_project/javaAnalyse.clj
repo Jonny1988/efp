@@ -48,7 +48,8 @@
   (reduce 
     (fn [function-result function-position]
       (assoc function-result 
-        :functions (conj (function-result :functions) (subs javastring (function-position :start) (function-position :end)))
+        :functions (conj (function-result :functions) {:name (re-find #"(?<= )(?:(?=\w+\().)+" (subs javastring (function-position :start) (function-position :end)))
+                                                       :string (subs javastring (function-position :start) (function-position :end))})
         :nonFunction (str (function-result :nonFunction) (subs javastring (function-result :lastFunctionEnd) (function-position :start)))
         :lastFunctionEnd (function-position :end)
       )

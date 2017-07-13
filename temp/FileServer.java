@@ -1,4 +1,4 @@
-package var.mom.jms.file;
+package vdar.mom.jms.file;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,8 +18,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class FileServer{
-	private static final String DESTINATION = "var.mom.jms.file.requestqueue";
+public class FileServer2{
+	private static final String DESTINATION = "queue.files";
 
 	private String fileRoot;
 	private Session session;
@@ -39,7 +39,7 @@ public class FileServer{
 
 	public void process() throws JMSException {
 		while (true) {
-			TextMessage request = (TextMessage) consumer.receive(1000);
+			TextMessage2 request = (TextMessage) consumer.receive(1000);
 			if (request != null) {
 				String filename = "";
 				try {
